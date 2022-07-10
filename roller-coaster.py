@@ -5,18 +5,17 @@ age = int(input("How old are you?: "))
 ticket_cost = 0
 
 
-if height > 120:
+if height > 120 and age < 56:
     print("You are eligible to ride.")
-    if age >= 18:
+    if age >= 18 and age < 45:
         ticket_cost += 12
     elif age >= 45 and age <= 55:
         ticket_cost += 0
     elif age >= 12 and age < 18:
         ticket_cost += 7
-    elif age < 12:
-        ticket_cost += 5
     else:
-        print("Please have a note from your Doctor allowing you to get on this ride. Sorry for the inconvenience.")
+        ticket_cost += 5
+    
     
     photo_taken = input("Do you want photos taken of you while on the ride? Y or N: ")
     if photo_taken.upper() == "Y":
@@ -26,5 +25,9 @@ if height > 120:
     else:
         print("Incorrect response.")
     print(f"Your ticket total comes out to ${ticket_cost}.")
+elif height > 120 and age >= 56:
+    print("Please have a note from your Physician permiting you to go on this ride. Thank you.") 
 else:
     print("Sorry, you cannot go on the ride.")
+
+
